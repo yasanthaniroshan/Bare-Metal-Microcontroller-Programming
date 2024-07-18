@@ -30,7 +30,11 @@ The code leverages direct register access and timer interrupts to blink an LED c
 - We use preprocessor directives (`#define`) to create human-readable aliases for memory-mapped registers of the Atmega328P. 
 - `volatile` ensures the compiler doesn't optimize away reads and writes to these registers, which are crucial for interacting with hardware.
 
+<<<<<<< Updated upstream
 2. **Timer1 Overflow Interrupt Service Routine (ISR)**
+=======
+2. **Timer1 Compare Match Interrupt Service Routine (ISR)**
+>>>>>>> Stashed changes
 
     ```c
     void __vector_11(void) __attribute__((signal, used, externally_visible));
@@ -114,6 +118,10 @@ The makefile provided in this project performs the following tasks:
 - Flashes the hex file to the Arduino Uno.
 
 ### Key Makefile Targets
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 - initializeDir: Creates the output directory.
 - copyFiles: Copies the source file to the build directory.
 - preprocess: Preprocesses the source file.

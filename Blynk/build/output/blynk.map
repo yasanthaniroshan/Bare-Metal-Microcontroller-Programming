@@ -19,7 +19,11 @@ Linker script and memory map
 
 Address of section .data set to 0x800100
 LOAD /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega328p.o
+<<<<<<< Updated upstream
 LOAD /tmp/cccalyVB.o
+=======
+LOAD /tmp/ccHATqja.o
+>>>>>>> Stashed changes
 START GROUP
 LOAD /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a
 LOAD /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/libm.a
@@ -206,7 +210,11 @@ END GROUP
                 0x000000000000007c                __vector_16
                 0x000000000000007c                __vector_18
                 0x000000000000007c                __vector_20
+<<<<<<< Updated upstream
  .text          0x0000000000000080       0xf6 /tmp/cccalyVB.o
+=======
+ .text          0x0000000000000080       0xf6 /tmp/ccHATqja.o
+>>>>>>> Stashed changes
                 0x0000000000000080                __vector_11
                 0x00000000000000e6                main
  .text          0x0000000000000176        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
@@ -256,7 +264,11 @@ END GROUP
                 [!provide]                        PROVIDE (__data_start, .)
  *(.data)
  .data          0x0000000000800100        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega328p.o
+<<<<<<< Updated upstream
  .data          0x0000000000800100        0x0 /tmp/cccalyVB.o
+=======
+ .data          0x0000000000800100        0x0 /tmp/ccHATqja.o
+>>>>>>> Stashed changes
  .data          0x0000000000800100        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
  *(.data*)
  *(.gnu.linkonce.d*)
@@ -271,7 +283,11 @@ END GROUP
                 [!provide]                        PROVIDE (__bss_start, .)
  *(.bss)
  .bss           0x0000000000800100        0x0 /usr/lib/gcc/avr/5.4.0/../../../avr/lib/avr5/crtatmega328p.o
+<<<<<<< Updated upstream
  .bss           0x0000000000800100        0x0 /tmp/cccalyVB.o
+=======
+ .bss           0x0000000000800100        0x0 /tmp/ccHATqja.o
+>>>>>>> Stashed changes
  .bss           0x0000000000800100        0x0 /usr/lib/gcc/avr/5.4.0/avr5/libgcc.a(_exit.o)
  *(.bss*)
  *(COMMON)
@@ -325,7 +341,11 @@ END GROUP
 
 .comment        0x0000000000000000       0x11
  *(.comment)
+<<<<<<< Updated upstream
  .comment       0x0000000000000000       0x11 /tmp/cccalyVB.o
+=======
+ .comment       0x0000000000000000       0x11 /tmp/ccHATqja.o
+>>>>>>> Stashed changes
                                          0x12 (size before relaxing)
 
 .note.gnu.avr.deviceinfo
