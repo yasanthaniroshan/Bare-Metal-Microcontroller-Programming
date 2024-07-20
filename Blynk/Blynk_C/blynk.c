@@ -71,8 +71,11 @@ void __vector_11(void)
  * @brief Main function
  *
  * This function blinks the LED connected to PORTB5 of Atmega 328
- * For 1 second delay, There are 4,000,000 cycles
- * with CLK/256 prescaler, 4,000,000/256 = 15624 cycles
+ * For 1 second delay, There are 16,000,000 cycles
+ * with CLK/256 prescaler, 16,000,000/256 = 62500 cycles per second
+ * For 1/62500 = 0.000016 seconds
+ * for 1ms 62.5 cycles
+ * for 1 second 62500 cycles
  *
  * @return int
  */
@@ -84,8 +87,8 @@ int main()
     TCCR1B = 0; // Initialize Timer1 Control Register B to 0
 
     // Store the value 15624 in OCR1A register
-    OCR1AL = 15624 & 0xFF; // Set Timer1 Compare Register Low Byte to 15625 & 0xFF
     OCR1AH = 15624 >> 8;   // Set Timer1 Compare Register High Byte to 15625 >> 8
+    OCR1AL = 15624 & 0xFF; // Set Timer1 Compare Register Low Byte to 15625 & 0xFF
 
     // Clear Timer1 Compare Match A Flag
     TIFR1 ^= (1 << OCF1A); // Clear Timer1 Compare Match A Flag
