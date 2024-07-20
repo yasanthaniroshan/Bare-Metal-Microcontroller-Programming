@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = 'build/output/blynk.hex'
+elf = 'build/output/blynk.hex'

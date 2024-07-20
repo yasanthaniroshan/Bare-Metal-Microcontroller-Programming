@@ -54,14 +54,16 @@ compile :
 assemble :
 	$(CC) $(ASM_FLAGS)
 	
-flash :
+build : initializeDir copyFiles preprocess compile assemble
 	$(CC) -mmcu=$(MMCU) -o $(OUTPUT)/$(OBJECT) $(BUILD)/$(SOURCE) -Wl,-Map=$(OUTPUT)/$(FILE).map
 	$(NM) -n $(OUTPUT)/$(OBJECT) > $(OUTPUT)/$(FILE).nm
 	avr-objcopy -O ihex -j .text -j .data $(OUTPUT)/$(OBJECT) $(OUTPUT)/$(HEX)
 	avr-size --format=avr --mcu=$(MMCU) $(OUTPUT)/$(OBJECT) > $(OUTPUT)/$(FILE)-size.txt
+
+flash:	
 	avrdude -C /etc/avrdude.conf -v -p $(MMCU) -c arduino -P /dev/ttyACM0 -b 115200 -D -U flash:w:$(OUTPUT)/$(HEX)
 
-all : initializeDir copyFiles  preprocess compile assemble flash
+all : initializeDir copyFiles  preprocess compile assemble build
 
 
 clean:
