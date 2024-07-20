@@ -299,6 +299,6 @@ If you have set up the Wokwi Simulator, first, you need to compile the code usin
 
 Congratulations! You've successfully blinked an LED on an Arduino Uno using bare-metal programming techniques. 
 
-## Further Exploration:** 
+## Further Exploration
 - Try modifying the compare value and prescaler to change the blinking frequency.
 - Experiment with other timer modes and interrupts to create more complex behaviors.
